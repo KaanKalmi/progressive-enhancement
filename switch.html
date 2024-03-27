@@ -1,28 +1,74 @@
 <!doctype html>
 <html lang="nl">
-	<head>
-		<meta charset="utf-8">
-		<title>Switch control / Progressive Enhancement / FDND</title>
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-		<link href="assets/styles.css" rel="stylesheet">
-		<style>
-			/* Schrijf hier gewoon je CSS voor dit component */
 
-			/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
+<head>
+	<meta charset="utf-8">
+	<title>Switch control / Progressive Enhancement / FDND</title>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+		rel="stylesheet">
+	<link href="assets/styles.css" rel="stylesheet">
+	<style>
+		.switch {
+			position: relative;
+			display: inline-block;
+			width: 4em;
+			height: 2em;
+			border: 5px dotted var(--purple);
+			border-radius: 1.8em;
+		}
 
-			/* Hint: Hoe ver ga je qua styling? Vraag jezelf dit altijd af */
-		</style>
-	</head>
-	<body>
-		<h1>Switch control</h1>
-		
-		<!-- Hint: Op het WebKit blog stond hierover vorige maand een goed artikel -->
+		.switch input {
+			opacity: 0;
+			width: 0;
+			height: 0;
+		}
 
-		<details open>
-			<summary>Demo video</summary>
-			<video src="assets/switch.mp4" width="119" height="67" controls muted autoplay loop>
-				<a href="assets/switch.mp4">assets/switch.mp4</a>
-			</video>
-		</details>
-	</body>
+		.slider {
+			position: absolute;
+			cursor: grab;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: var(--green);
+			transition: .4s;
+		}
+
+		.slider:before {
+			position: absolute;
+			content: "";
+			height:1.8rem;
+			width: 2rem;
+			left: .1rem;
+			bottom: .1rem;
+			background-color: var(--blue);
+			transition: .4s;
+		}
+
+		input:checked+.slider {
+			background-color: var(--yellow);
+		}
+
+		input:checked+.slider:before {
+			transform: translateX(1.75rem);
+		}
+
+		.slider.round {
+			border-radius: 1.8em;
+		}
+
+		.slider.round:before {
+			border-radius: 50%;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Switch control</h1>
+	<label class="switch">
+		<input type="checkbox">
+		<span class="slider round"></span>
+	</label>
+</body>
+
 </html>
