@@ -6,9 +6,52 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 		<link href="assets/styles.css" rel="stylesheet">
 		<style>
-			/* Schrijf hier gewoon je CSS voor dit component */
-
-			/* Hint: Denk niet te ingewikkeld */
+			body{
+				background-color: var(--blue);
+				color: var(--purple);
+			}
+			.fdnd-nav{
+				display: flex;
+				flex-direction: row;
+				background-color: var(--green);
+				color: var(--blue);
+				padding: 1rem;
+				margin: 1rem;
+				border-radius: 5px;
+				width: max-content;
+				& li{
+					margin: 0.5rem;
+					display: inline-block;
+					& :hover{
+						border: 2px solid var(--blue);
+						border-radius: 5px;
+						padding: .25em;
+					}
+					& a{
+						color: var(--blue);
+						text-decoration: none;
+						margin-inline: 1em;
+					}
+				}
+			}
+			h1{
+				border: 1px solid var(--green);
+				border-radius: 5px;
+				width: max-content;
+				margin: 1rem;
+				padding: 1rem;
+				color: var(--green);
+			}
+			form{
+				margin: 2em;
+				padding: 1em;
+				display: flex;
+    			flex-wrap: wrap;
+    			align-content: center;
+    			justify-content: center;
+    			align-items: center;
+    			flex-direction: column;
+			}
 		</style>
 		<script type="module">
 			/* Schrijf hier eventueel je client-side JavaScript */
@@ -20,22 +63,13 @@
 	</head>
 	<body>
 		<h1>File upload met preview</h1>
-
-		<!-- Voor het uploaden van een bestand heb je altijd een formulier nodig.
-			 Dus die krijg je alvast. Maak je over de server niet druk; het gaat om de UI. -->
 		<form method="post">
 
-			<!-- Hint: Denk niet te ingewikkeld -->
+			<input type="file" name="filename">
 
 			<button type="submit" class="fdnd-button">Uploaden</button>
 
 		</form>
 
-		<details open>
-			<summary>Demo video</summary>
-			<video src="assets/file.mp4" width="1496" height="496" controls muted autoplay loop>
-				<a href="assets/file.mp4">assets/file.mp4</a>
-			</video>
-		</details>
 	</body>
 </html>
