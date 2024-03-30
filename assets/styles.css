@@ -25,6 +25,7 @@ h1 {
 	margin: 0;
 	letter-spacing: -0.05em;
 }
+ul{ list-style: upper-roman;}
 
 .fdnd-nav a {
 	color: var(--blue);
