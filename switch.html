@@ -8,6 +8,42 @@
 		rel="stylesheet">
 	<link href="assets/styles.css" rel="stylesheet">
 	<style>
+		body{
+				background-color: var(--blue);
+				color: var(--purple);
+			}
+			.fdnd-nav{
+				display: flex;
+				flex-direction: row;
+				background-color: var(--green);
+				color: var(--blue);
+				padding: 1rem;
+				margin: 1rem;
+				border-radius: 5px;
+				width: max-content;
+				& li{
+					margin: 0.5rem;
+					display: inline-block;
+					& :hover{
+						border: 2px solid var(--blue);
+						border-radius: 5px;
+						padding: .25em;
+					}
+					& a{
+						color: var(--blue);
+						text-decoration: none;
+						margin-inline: 1em;
+					}
+				}
+			}
+			h1{
+				border: 1px solid var(--green);
+				border-radius: 5px;
+				width: max-content;
+				margin: 1rem;
+				padding: 1rem;
+				color: var(--green);
+			}
 		.switch {
 			position: relative;
 			display: inline-block;
@@ -64,6 +100,15 @@
 </head>
 
 <body>
+	<nav class="fdnd-nav">
+		<ul>
+			<li><a href="index.html">Terug</a></li>
+			<li><a href="faq.html">Veelgestelde vragen</a></li> <!-- af -->
+			<li><a href="switch.html">Switch control</a></li> <!-- af -->
+			<li><a href="menu.html">Mobiel menu</a></li> <!-- bezig -->
+			<li><a href="file.html">File upload met preview</a></li> <!-- not started -->
+		</ul>
+	</nav>
 	<h1>Switch control</h1>
 	<label class="switch">
 		<input type="checkbox">
